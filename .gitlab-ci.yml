@@ -1,0 +1,13 @@
+include:
+  - project: 'cicd/kgh_cicd'
+    file: '/JSL/autotests.gitlab-ci.yml'
+    ref: main
+test:
+  variables:
+    GITURL: https://project.mos.ru/project_auto.git
+    JENKINS_JOB: jenkins-job-name
+    TEST_JAVA_VERSION: openjdk-21.0.2
+    TEST_MAVEN_VERSION: apache-maven-3.9.6
+    TEST_COMMAND: mvn clean test -Dvideo=true -Dtags=@regress -DremoteUrl=10.10.10.10:4444
+    NOTIFY_MAIL: Hero@it.mos.ru
+    NOTIFY_CHAT: Автотесты|jenkins
