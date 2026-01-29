@@ -16,8 +16,8 @@
         <aspectj.version>1.9.22</aspectj.version>
         <aspectj-maven-plugin.version>1.15.0</aspectj-maven-plugin.version>
         <surefire.version>3.2.5</surefire.version>
-        <selenide.version>7.7.3</selenide.version>
-        <selenide-selenoid.version>7.7.3</selenide-selenoid.version>
+        <selenide.version>7.14.0</selenide.version>
+        <selenide-selenoid.version>7.14.0</selenide-selenoid.version>
         <log4j.version>2.20.0</log4j.version>
         <slf4j.version>2.0.12</slf4j.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
@@ -131,6 +131,8 @@
     </build>
 
     <dependencies>
+        <!--cucumber-->
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -163,6 +165,11 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
         <dependency>
@@ -261,4 +268,36 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>nexus-maven-central</id>
+                    <name>nexus-maven-central</name>
+                    <url>https://repo-mirror.mos.ru/repository/maven-central/</url>
+                </repository>
+                <repository>
+                    <id>nexus-maven-releases</id>
+                    <name>nexus-maven-releases</name>
+                    <url>https://repo-mirror.mos.ru/repository/maven-releases/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus-maven-central</id>
+                    <name>nexus-maven-central</name>
+                    <url>https://repo-mirror.mos.ru/repository/maven-central/</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>nexus-maven-releases</id>
+                    <name>nexus-maven-releases</name>
+                    <url>https://repo-mirror.mos.ru/repository/maven-releases/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
 </project>
