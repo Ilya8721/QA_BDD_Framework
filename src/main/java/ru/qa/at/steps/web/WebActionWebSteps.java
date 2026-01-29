@@ -6,6 +6,8 @@ import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.ru.Если;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.qa.at.actions.WebActions;
 import ru.qa.at.utils.Sleep;
 import ru.qa.at.utils.web.pagecontext.PageManager;
@@ -17,6 +19,8 @@ import static ru.qa.at.utils.VariableUtil.replaceVars;
 
 
 public class WebActionWebSteps extends AbstractWebSteps {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(WebActionWebSteps.class);
 
     public WebActionWebSteps(PageManager pageManager) {
         super(pageManager);

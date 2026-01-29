@@ -37,4 +37,17 @@ public interface Configurations extends Config {
     @DefaultValue("false")
     boolean getEnableLog();
 
+    // Database settings
+    @Key("datasource.url")
+    @DefaultValue("")
+    String getDatabaseURL();
+
+    @Key("login.db")
+    @DefaultValue("")
+    String getLoginDatabase();
+
+    @Key("password.db")
+    @DefaultValue("")
+    String getPasswordDatabase();
+
 }

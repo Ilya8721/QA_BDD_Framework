@@ -10,7 +10,7 @@ public class DebugWebSteps extends AbstractWebSteps {
         super(pageManager);
     }
 
-    @Если("шаг № {string}")
+    @Если("ШАГ № {string}")
     public void stepNumber(String stepNum) {
         LOGGER.info("Шаг номер " + stepNum);
     }

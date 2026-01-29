@@ -3,12 +3,16 @@ package ru.qa.at.steps.web;
 import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.qa.at.actions.WebChecks;
 import ru.qa.at.utils.web.pagecontext.PageManager;
 
 import java.util.List;
 
 public class WebCheckWebSteps extends AbstractWebSteps {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(WebCheckWebSteps.class);
 
     public WebCheckWebSteps(PageManager pageManager) {
         super(pageManager);
